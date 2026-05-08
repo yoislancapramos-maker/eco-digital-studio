@@ -19,7 +19,17 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background: var(--bg);
+  background-color: #03030A;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(255,0,110,0.15) 0%, transparent 100%),
+    radial-gradient(ellipse 60% 40% at 100% 50%, rgba(0,217,255,0.10) 0%, transparent 100%),
+    radial-gradient(ellipse 60% 40% at 0% 60%, rgba(139,92,246,0.10) 0%, transparent 100%),
+    radial-gradient(ellipse 40% 30% at 50% 100%, rgba(244,208,63,0.06) 0%, transparent 100%),
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px),
+    radial-gradient(circle at 1px 1px, rgba(255,255,255,0.12) 1px, transparent 0);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 80px 80px, 80px 80px, 20px 20px;
+  background-attachment: fixed;
   color: var(--text);
   font-family: var(--font-body);
   font-size: 16px;
@@ -27,14 +37,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ── CANVAS FONDO ── */
-#bg-canvas {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0.6;
-}
+#bg-canvas { display: none; }
 
 /* ── NOISE ── */
 body::before {
@@ -117,12 +120,22 @@ nav.scrolled {
   display: flex; align-items: center; justify-content: space-between;
 }
 .logo {
-  font-family: var(--font-display);
-  font-size: 20px; font-weight: 800;
-  letter-spacing: -0.02em; color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 10px;
   text-decoration: none;
 }
-.logo span { color: var(--green); }
+.logo-text {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+.logo-text em {
+  font-style: normal;
+  color: var(--green);
+}
 
 .nav-links {
   display: flex; gap: 8px; list-style: none;
