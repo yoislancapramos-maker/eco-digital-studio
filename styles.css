@@ -163,6 +163,15 @@ nav.scrolled {
   border: 1px solid rgba(192,96,240,0.35);
   color: var(--purple);
 }
+.nav-links li:nth-child(4) a {
+  background: rgba(240,96,168,0.12);
+  border: 1px solid rgba(240,96,168,0.35);
+  color: var(--pink);
+}
+.nav-links li:nth-child(4) a:hover {
+  background: var(--pink); color: #fff;
+  box-shadow: 0 4px 20px rgba(240,96,168,0.4);
+}
 .nav-links li:nth-child(1) a:hover {
   background: var(--green); color: #080810;
   box-shadow: 0 4px 20px rgba(184,240,96,0.4);
