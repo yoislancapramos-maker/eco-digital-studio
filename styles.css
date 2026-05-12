@@ -386,6 +386,35 @@ section { padding: 100px 0; }
 .service-price sup { font-size: 20px; vertical-align: top; margin-top: 8px; }
 .service-price .currency { font-size: 14px; color: var(--muted); font-weight: 400; margin-left: 4px; }
 .price-label { font-size: 14px; font-weight: 500; }
+.service-cta {
+  display: inline-flex; align-items: center;
+  margin-top: 24px;
+  font-size: 13px; font-weight: 700;
+  padding: 10px 22px; border-radius: 100px;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.service-cta:hover { transform: translateY(-2px); }
+.service-cta-green {
+  background: linear-gradient(135deg, var(--green), var(--cyan));
+  color: #080810;
+}
+.service-cta-green:hover { box-shadow: 0 8px 24px rgba(184,240,96,0.3); }
+.service-cta-purple {
+  background: linear-gradient(135deg, var(--purple), var(--pink));
+  color: #fff;
+}
+.service-cta-purple:hover { box-shadow: 0 8px 24px rgba(192,96,240,0.3); }
+.service-cta-cyan {
+  background: linear-gradient(135deg, var(--cyan), var(--green));
+  color: #080810;
+}
+.service-cta-cyan:hover { box-shadow: 0 8px 24px rgba(96,212,240,0.3); }
+.service-cta-pink {
+  background: linear-gradient(135deg, var(--pink), var(--orange));
+  color: #fff;
+}
+.service-cta-pink:hover { box-shadow: 0 8px 24px rgba(240,96,168,0.3); }
 
 .service-includes { margin-top: 20px; list-style: none; display: flex; flex-direction: column; gap: 10px; }
 .service-includes li { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--muted); }
