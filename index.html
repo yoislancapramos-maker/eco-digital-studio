@@ -13,6 +13,29 @@
     href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
     rel="stylesheet" />
   <link rel="icon" href="assets/favicon.png" type="image/png" />
+
+  <!-- SEO -->
+  <meta name="author" content="Eco Digital Studio" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph (WhatsApp, Facebook, LinkedIn) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://eco-digital-studio.vercel.app/" />
+  <meta property="og:title" content="Eco Digital Studio — Landing Pages, Webs y Apps Profesionales" />
+  <meta property="og:description"
+    content="Creamos landing pages, sitios web y webapps profesionales. Diseño moderno, entrega rápida y resultados reales." />
+  <meta property="og:image" content="https://eco-digital-studio.vercel.app/assets/eco-banner.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="es_LA" />
+
+  <!-- Twitter/X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Eco Digital Studio — Landing Pages, Webs y Apps Profesionales" />
+  <meta name="twitter:description"
+    content="Creamos landing pages, sitios web y webapps profesionales. Diseño moderno, entrega rápida y resultados reales." />
+  <meta name="twitter:image" content="https://eco-digital-studio.vercel.app/assets/eco-banner.jpg" />
+
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -37,6 +60,21 @@
         target="_blank" rel="noopener">
         Cotizar ahora →
       </a>
+
+      <button class="nav-hamburger" id="navHamburger" aria-label="Menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <div class="nav-mobile" id="navMobile">
+      <a href="#servicios" onclick="closeMobileMenu()">Servicios</a>
+      <a href="#portafolio" onclick="closeMobileMenu()">Portafolio</a>
+      <a href="#como-funciona" onclick="closeMobileMenu()">Proceso</a>
+      <a href="#por-que-nosotros" onclick="closeMobileMenu()">Nosotros</a>
+      <a href="https://wa.me/59896782111?text=Hola%2C%20quiero%20cotizar%20mi%20proyecto" target="_blank"
+        class="nav-mobile-cta">Cotizar ahora →</a>
     </div>
   </nav>
 
@@ -435,44 +473,103 @@
         <span class="tag tag-orange">✦ Testimonios</span>
         <h2 class="section-title">Lo que dicen <br /><span class="dim">nuestros clientes.</span></h2>
       </div>
-      <div class="testimonials-grid reveal">
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <div class="testimonial-text">"En menos de 3 días tenía mi landing online y ya estaba recibiendo consultas. El
-            diseño superó todas mis expectativas."</div>
-          <div class="testimonial-author">
-            <div class="author-avatar">MG</div>
-            <div>
-              <div class="author-name">Martina García</div>
-              <div class="author-role">Nutricionista — Buenos Aires</div>
+
+      <div class="testimonials-slider">
+        <div class="testimonials-overflow">
+          <div class="testimonials-wrapper" id="testimonialsWrapper">
+
+            <div class="testimonial-card">
+              <div class="testimonial-stars">★★★★★</div>
+              <div class="testimonial-text">"En menos de 3 días tenía mi landing online y ya estaba recibiendo
+                consultas.
+                El diseño superó todas mis expectativas."</div>
+              <div class="testimonial-author">
+                <div class="author-avatar">MG</div>
+                <div>
+                  <div class="author-name">Martina García</div>
+                  <div class="author-role">Nutricionista — Buenos Aires</div>
+                </div>
+              </div>
             </div>
+
+            <div class="testimonial-card">
+              <div class="testimonial-stars">★★★★★</div>
+              <div class="testimonial-text">"Mi tienda online quedó increíble. Los clientes me preguntan quién la hizo.
+                Vale cada centavo de lo que cobran."</div>
+              <div class="testimonial-author">
+                <div class="author-avatar">CR</div>
+                <div>
+                  <div class="author-name">Carlos Ramírez</div>
+                  <div class="author-role">Emprendedor — Montevideo</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="testimonial-stars">★★★★★</div>
+              <div class="testimonial-text">"Comunicación directa, tiempos cumplidos y un resultado que se ve
+                profesional.
+                Lo recomiendo sin dudarlo."</div>
+              <div class="testimonial-author">
+                <div class="author-avatar">LV</div>
+                <div>
+                  <div class="author-name">Laura Venegas</div>
+                  <div class="author-role">Consultora — Ciudad de México</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="testimonial-stars">★★★★★</div>
+              <div class="testimonial-text">"Tenía dudas al principio, pero el resultado fue increíble. Mi sitio quedó
+                mejor de lo que imaginaba y mis ventas aumentaron desde el primer mes."</div>
+              <div class="testimonial-author">
+                <div class="author-avatar">JP</div>
+                <div>
+                  <div class="author-name">Jorge Pérez</div>
+                  <div class="author-role">Entrenador personal — Bogotá</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="testimonial-stars">★★★★★</div>
+              <div class="testimonial-text">"El proceso fue súper sencillo. Les expliqué mi idea y en pocos días tenía
+                mi
+                tienda online funcionando. Totalmente recomendados."</div>
+              <div class="testimonial-author">
+                <div class="author-avatar">AS</div>
+                <div>
+                  <div class="author-name">Andrea Solís</div>
+                  <div class="author-role">Emprendedora — Santiago de Chile</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="testimonial-stars">★★★★★</div>
+              <div class="testimonial-text">"Profesionales, rápidos y con muy buen gusto para el diseño. Mi página web
+                refleja exactamente la imagen que quería para mi negocio."</div>
+              <div class="testimonial-author">
+                <div class="author-avatar">RM</div>
+                <div>
+                  <div class="author-name">Ricardo Mora</div>
+                  <div class="author-role">Arquitecto — Ciudad de Panamá</div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <div class="testimonial-text">"Mi tienda online quedó increíble. Los clientes me preguntan quién la hizo. Vale
-            cada centavo de lo que cobran."</div>
-          <div class="testimonial-author">
-            <div class="author-avatar">CR</div>
-            <div>
-              <div class="author-name">Carlos Ramírez</div>
-              <div class="author-role">Emprendedor — Montevideo</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <div class="testimonial-text">"Comunicación directa, tiempos cumplidos y un resultado que se ve profesional.
-            Lo recomiendo sin dudarlo."</div>
-          <div class="testimonial-author">
-            <div class="author-avatar">LV</div>
-            <div>
-              <div class="author-name">Laura Venegas</div>
-              <div class="author-role">Consultora — Ciudad de México</div>
-            </div>
-          </div>
-        </div>
+
+        <!-- FLECHAS -->
+        <button class="t-btn t-btn-prev" id="tPrev">&#8249;</button>
+        <button class="t-btn t-btn-next" id="tNext">&#8250;</button>
       </div>
+
+      <!-- PUNTOS -->
+      <div class="t-dots" id="tDots"></div>
+
     </div>
   </section>
 

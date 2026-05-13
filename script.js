@@ -84,3 +84,75 @@ window.addEventListener('mousemove', e => {
   cursor.style.left = e.clientX + 'px';
   cursor.style.top = e.clientY + 'px';
 });
+
+// ── SLIDER TESTIMONIOS ──
+const wrapper = document.getElementById('testimonialsWrapper');
+const dotsContainer = document.getElementById('tDots');
+const total = wrapper.querySelectorAll('.testimonial-card').length;
+let current = 0;
+
+// Crear puntos
+for (let i = 0; i < total; i++) {
+  const dot = document.createElement('button');
+  dot.className = 't-dot' + (i === 0 ? ' active' : '');
+  dot.addEventListener('click', () => goTo(i));
+  dotsContainer.appendChild(dot);
+}
+
+function goTo(index) {
+  current = (index + total) % total;
+  const cardWidth = wrapper.querySelector('.testimonial-card').offsetWidth;
+  wrapper.style.transform = `translateX(-${current * cardWidth}px)`;
+  document.querySelectorAll('.t-dot').forEach((d, i) => {
+    d.classList.toggle('active', i === current);
+  });
+}
+
+document.getElementById('tPrev').addEventListener('click', () => goTo(current - 1));
+document.getElementById('tNext').addEventListener('click', () => goTo(current + 1));
+
+// Auto-play cada 5 segundos — se resetea al tocar flecha
+let autoplay = setInterval(() => goTo(current + 1), 5000);
+
+function resetAutoplay() {
+  clearInterval(autoplay);
+  autoplay = setInterval(() => goTo(current + 1), 5000);
+}
+
+document.getElementById('tPrev').addEventListener('click', resetAutoplay);
+document.getElementById('tNext').addEventListener('click', resetAutoplay);
+
+// Swipe en móvil
+let touchStartX = 0
+let touchEndX = 0
+
+wrapper.addEventListener('touchstart', (e) => {
+  touchStartX = e.touches[0].clientX
+}, { passive: true })
+
+wrapper.addEventListener('touchend', (e) => {
+  touchEndX = e.changedTouches[0].clientX
+  const diff = touchStartX - touchEndX
+  if (Math.abs(diff) > 50) {
+    if (diff > 0) {
+      goTo(current + 1)
+    } else {
+      goTo(current - 1)
+    }
+    resetAutoplay()
+  }
+}, { passive: true })
+
+// ── MENÚ HAMBURGUESA ──
+const hamburger = document.getElementById('navHamburger')
+const navMobile = document.getElementById('navMobile')
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open')
+  navMobile.classList.toggle('open')
+})
+
+function closeMobileMenu() {
+  hamburger.classList.remove('open')
+  navMobile.classList.remove('open')
+}
